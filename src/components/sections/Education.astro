@@ -1,0 +1,32 @@
+---
+import Section from "../Section.astro";
+
+import {education} from "../../../cv.json"
+---
+
+<Section title="Educación">
+    <ul>
+        {
+        education.map(
+        ({ institution, area, endDate }) => {
+            return (
+            <li>
+                <h3>{area}</h3>
+                <h4>{institution}</h4>
+                <p>{endDate}</p>
+            </li>
+            )
+            }
+        )
+        }
+    </ul>
+</Section>
+
+<style>
+    li {
+        margin-top: 25px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+</style>
